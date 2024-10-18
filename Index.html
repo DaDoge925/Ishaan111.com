@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Era-Blockmango</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* styles.css */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .background-image {
+            background-image: url('https://cdn-www.bluestacks.com/bs-images/Wallpaper_com.app_.blockmango.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+            z-index: 0; /* Behind other content */
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 1s ease-in-out; /* Entrance animation */
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            animation: fadeIn 1s ease-in-out 0.5s; /* Fade-in effect */
+            position: relative;
+            z-index: 1; /* Bring buttons above overlay */
+        }
+
+        .social-button-container {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.5em;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s, filter 0.3s;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.8s forwards;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: left 0.3s;
+            z-index: 0;
+            border-radius: 10px; /* Match border-radius with button */
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button.youtube {
+            background: linear-gradient(45deg, #ff005f, #cc003e); /* Bright red gradient */
+        }
+
+        .button.discord {
+            background: linear-gradient(45deg, #2e07b8, #4b18b2); /* Rich blue gradient */
+        }
+
+        .button:hover {
+            transform: scale(1.1) rotate(1deg); /* Slight rotation and scaling */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            filter: brightness(1.2); /* Brighten on hover */
+            animation: bounce 0.4s; /* Bounce effect */
+            z-index: 1; /* Ensure the button stays on top */
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .footer-text {
+            font-size: 1.5em;
+            color: #fff;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+            animation: fadeIn 1s ease-in-out 1s; /* Delay fade-in */
+        }
+
+        .footer-id {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00ff00;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+            animation: fadeIn 1s ease-in-out 1.5s; /* Delay fade-in */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .button {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+            .footer-text {
+                font-size: 1.2em;
+            }
+            .footer-id {
+                font-size: 1.5em;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image">
+        <div class="overlay"></div> <!-- Overlay for background -->
+        <h1>My Social Media Links</h1>
+        <div class="social-buttons">
+            <div class="social-button-container">
+                <a href="https://www.youtube.com/@Era-BGofficial" class="button youtube">YouTube</a>
+            </div>
+            <div class="social-button-container">
+                <a href="https://discord.gg/3UhgPt9J4w" class="button discord">Discord</a>
+            </div>
+        </div>
+        <p class="footer-text">BlockmanGo ID:</p>
+        <p class="footer-id">BLOCKMANGO ID</p>
+        <p class="footer-text">Connect and join the fun!</p>
+    </div>
+</body>
+</html>
