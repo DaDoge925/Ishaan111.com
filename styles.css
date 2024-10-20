@@ -14,11 +14,13 @@ body {
 /* Profile Section */
 .profile-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   padding: 20px; /* Reduced padding */
-  background-color: #222;
+  background-image: url('https://cdn-www.bluestacks.com/bs-images/Wallpaper_com.app_.blockmango.jpg'); /* Background image */
+  background-size: cover; /* Cover background */
+  background-position: center; /* Center the image */
   color: white;
   position: relative;
   overflow: hidden; 
@@ -27,7 +29,6 @@ body {
 
 .profile {
   text-align: center;
-  flex-grow: 1; 
 }
 
 .profile-img {
@@ -56,14 +57,6 @@ body {
   margin-top: 5px;
 }
 
-/* Logo Styles */
-.logo {
-  width: 80px; /* Reduced size */
-  height: auto; 
-  margin-left: 10px; /* Reduced margin */
-  animation: bounceIn 0.5s; 
-}
-
 /* Social Media Section */
 .social-media-section {
   height: 80vh; 
@@ -71,7 +64,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('https://www1.minijuegosgratis.com/v3/games/thumbnails/240480_1.jpg'); /* Background image */
+  background-image: url('https://www1.minijuegosgratis.com/v3/games/thumbnails/240480_1.jpg'); /* Higher quality background */
   background-size: cover; /* Cover background */
   color: white;
   opacity: 0; 
@@ -234,36 +227,4 @@ footer {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-@media (max-width: 768px) {
-  .profile-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo {
-    margin-top: 10px; 
-  }
-
-  .social-buttons {
-    flex-direction: column;
-  }
-
-  .social-buttons a {
-    width: 100%; /* Full width for mobile */
-  }
-
-  .video-container {
-    width: 100%; /* Full width for mobile */
-  }
-}
+  0%, 20%, 50%, 80%,
