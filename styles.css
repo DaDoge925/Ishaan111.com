@@ -5,8 +5,9 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f0f0f0 50%, #e1e1e1 50%);
+  color: #333;
   scroll-behavior: smooth;
 }
 
@@ -16,63 +17,64 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  padding: 20px; /* Add padding for spacing */
+  padding: 40px; 
   background-color: #222;
   color: white;
   position: relative;
-  animation: fadeIn 1s; /* Animation for profile section */
+  overflow: hidden; /* Prevent overflow of elements */
+  animation: fadeIn 1s; 
 }
 
 .profile {
   text-align: center;
-  flex-grow: 1; /* Allows the profile section to take available space */
+  flex-grow: 1; 
 }
 
 .profile-img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 4px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adding shadow for depth */
-  transition: transform 0.3s ease; /* Add hover effect */
+  border: 4px solid #f4a261;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease; 
 }
 
 .profile-img:hover {
-  transform: scale(1.1); /* Scale effect on hover */
+  transform: scale(1.1);
 }
 
 .profile h1 {
   margin-top: 15px;
-  font-size: 2.5rem; /* Increased size for prominence */
-  color: #f4a261; /* Updated color */
-  animation: slideIn 0.5s forwards; /* Text animation */
+  font-size: 2.5rem; 
+  color: #f4a261; 
+  animation: slideIn 0.5s forwards; 
 }
 
 .profile p {
-  font-size: 1.5rem; /* Increased size for visibility */
+  font-size: 1.5rem; 
   color: #fff;
   margin-top: 5px;
 }
 
 /* Logo Styles */
 .logo {
-  width: 100px; /* Set a width for the logo */
-  height: auto; /* Maintain aspect ratio */
-  margin-left: 20px; /* Space between the profile and logo */
-  animation: bounceIn 0.5s; /* Bounce effect for logo */
+  width: 100px; 
+  height: auto; 
+  margin-left: 20px; 
+  animation: bounceIn 0.5s; 
 }
 
 /* Social Media Section */
 .social-media-section {
-  height: 80vh; /* Adjusted for better spacing */
+  height: 80vh; 
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #333;
   color: white;
-  opacity: 0; /* Start hidden for animation */
+  opacity: 0; 
   animation: fadeIn 1s forwards;
-  animation-delay: 1s; /* Delay for smooth transition */
+  animation-delay: 1s; 
 }
 
 .social-buttons {
@@ -86,46 +88,66 @@ body {
   text-decoration: none;
   font-size: 1.2rem;
   border-radius: 5px;
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Added transition */
+  transition: transform 0.3s ease, background-color 0.3s ease; 
+  position: relative;
+  overflow: hidden; /* Prevent overflow of pseudo-element */
+}
+
+.social-buttons a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 0; /* Behind the text */
+}
+
+.social-buttons a:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .social-buttons a:hover {
-  transform: scale(1.1);
+  color: #fff;
 }
 
 .youtube-btn {
-  background-color: #ff0000; /* YouTube red */
+  background-color: #ff0000; 
 }
 
 .discord-btn {
-  background-color: #7289da; /* Discord blue */
+  background-color: #7289da; 
 }
 
 /* Gameplay Video Section */
 .gameplay-section {
-  height: 80vh; /* Adjusted for better spacing */
+  height: 80vh; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #444;
-  opacity: 0; /* Start hidden for animation */
+  opacity: 0; 
   animation: fadeIn 1s forwards;
-  animation-delay: 1.5s; /* Delay for smooth transition */
+  animation-delay: 1.5s; 
 }
 
 .video-container {
   width: 80%;
   max-width: 800px;
-  margin-bottom: 20px; /* Added margin for spacing */
+  margin-bottom: 20px; 
 }
 
 .video-container iframe {
   width: 100%;
   height: 450px;
   border: none;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adding shadow for depth */
+  border-radius: 10px; 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
 }
 
 .thank-you {
@@ -145,7 +167,7 @@ body {
   text-align: center;
   opacity: 0;
   animation: fadeIn 1s forwards;
-  animation-delay: 2s; /* Delay for appearance */
+  animation-delay: 2s; 
 }
 
 .arrow {
@@ -155,7 +177,17 @@ body {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 15px solid white;
-  animation: bounce 1s infinite; /* Bouncing arrow animation */
+  animation: bounce 1s infinite; 
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+  position: relative;
+  z-index: 10;
 }
 
 /* Animations */
@@ -205,22 +237,14 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  .social-media-section {
-    animation: fadeInUp 1s forwards;
-    animation-delay: 0.5s;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .profile-section {
     flex-direction: column;
     align-items: center;
   }
 
   .logo {
-    margin-top: 20px; /* Space above logo */
+    margin-top: 20px; 
   }
 
   .social-buttons {
@@ -228,7 +252,11 @@ body {
   }
 
   .social-buttons a {
-    width: 100%; /* Full-width buttons on smaller screens */
+    width: 100%; 
     text-align: center;
+  }
+
+  .gameplay-section {
+    padding: 20px;
   }
 }
