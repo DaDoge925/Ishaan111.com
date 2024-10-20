@@ -259,4 +259,11 @@ footer {
     flex-direction: column;
   }
 
-  .social-buttons a
+  .social-buttons a {
+    width: 100%; /* Full width for mobile */
+  }
+
+  .video-container {
+    width: 100%; /* Full width for mobile */
+  }
+}
