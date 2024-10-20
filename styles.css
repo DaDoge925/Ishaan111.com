@@ -68,13 +68,21 @@ body {
 .social-media-section {
   height: 80vh; 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background-image: url('https://www1.minijuegosgratis.com/v3/games/thumbnails/240480_1.jpg'); /* Background image */
+  background-size: cover; /* Cover background */
   color: white;
   opacity: 0; 
   animation: fadeIn 1s forwards;
   animation-delay: 1s; 
+  padding: 20px; /* Padding around section */
+}
+
+.social-title {
+  font-size: 2rem; /* Title font size */
+  margin-bottom: 20px; /* Space between title and buttons */
 }
 
 .social-buttons {
@@ -251,12 +259,4 @@ footer {
     flex-direction: column;
   }
 
-  .social-buttons a {
-    width: 100%; 
-    text-align: center;
-  }
-
-  .gameplay-section {
-    padding: 20px;
-  }
-}
+  .social-buttons a
