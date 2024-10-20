@@ -17,7 +17,6 @@
       <h1>Ishaan</h1>
       <p>A Game Lover</p>
     </div>
-    <img src="channels4_profile.jpg" alt="Your Logo" class="logo">
   </section>
 
   <!-- Social Media Section -->
@@ -38,7 +37,7 @@
   </section>
 
   <!-- Scroll Down Indicator -->
-  <div class="scroll-indicator">
+  <div class="scroll-indicator" id="scroll-indicator">
     <span>Scroll Down</span>
     <div class="arrow"></div>
   </div>
@@ -46,5 +45,17 @@
   <footer>
     <p>&copy; 2024 Ishaan. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Hide scroll indicator when reaching the bottom of the page
+    window.onscroll = function() {
+      var scrollIndicator = document.getElementById('scroll-indicator');
+      if (document.documentElement.scrollTop + window.innerHeight >= document.documentElement.scrollHeight) {
+        scrollIndicator.style.display = 'none';
+      } else {
+        scrollIndicator.style.display = 'block';
+      }
+    };
+  </script>
 </body>
 </html>
