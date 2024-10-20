@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth; /* Smooth scrolling effect */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -12,14 +12,16 @@ body {
   overflow-x: hidden;
 }
 
+/* Header section with parallax effect */
 #intro {
   text-align: center;
   margin-top: 50px;
-  background-image: url('your-background.jpg'); /* Parallax background */
+  background-image: url('your-background.jpg');
   background-attachment: fixed;
   background-size: cover;
-  padding: 100px 0;
+  padding: 150px 0;
   color: white;
+  position: relative;
 }
 
 .profile-picture {
@@ -28,6 +30,11 @@ body {
   border-radius: 50%;
   margin-bottom: 20px;
   border: 5px solid #fff;
+  animation: fade-in 2s ease-in-out;
+}
+
+h1, h2 {
+  animation: text-slide 1.5s ease-in-out;
 }
 
 h1 {
@@ -41,12 +48,13 @@ h2 {
   color: #fff;
 }
 
+/* Social buttons section */
 #social {
   text-align: center;
   margin-top: 100px;
   opacity: 0;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-  transform: translateY(50px); /* Slide up animation */
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .social-button {
@@ -70,8 +78,10 @@ h2 {
 
 .social-button:hover {
   transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Gameplay section */
 #gameplay {
   text-align: center;
   margin-top: 100px;
@@ -85,8 +95,10 @@ video {
   max-width: 800px;
   border: 5px solid #2e86de;
   border-radius: 20px;
+  animation: zoom-in 1.5s ease-in-out;
 }
 
+/* Thank you section */
 #thankyou {
   text-align: center;
   margin-top: 50px;
@@ -99,12 +111,52 @@ video {
 h2 {
   font-size: 28px;
   color: #34495e;
+  animation: text-fade 2s ease-in-out;
 }
 
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes text-slide {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes text-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hidden elements will appear with scrolling */
 .hidden {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
 }
 
 .visible {
